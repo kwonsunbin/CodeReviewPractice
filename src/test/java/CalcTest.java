@@ -1,6 +1,8 @@
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -31,5 +33,25 @@ public class CalcTest {
         assertEquals(9, calc.getZegop(3));
         assertEquals(0, calc.getZegop(0));
         assertEquals(25, calc.getZegop(-5));
+    }
+
+    @Test
+    void 세_양수의_합() {
+        assertThat(calc.getSumSum(1, 2, 3)).isEqualTo(6);
+    }
+
+    @Test
+    void 음수_포함_합() {
+        assertThat(calc.getSumSum(-1, -2, -3)).isEqualTo(-6);
+    }
+
+    @Test
+    void 모두_0이면_0() {
+        assertThat(calc.getSumSum(0, 0, 0)).isEqualTo(0);
+    }
+
+    @Test
+    void 양수_음수_혼합() {
+        assertThat(calc.getSumSum(10, -3, 5)).isEqualTo(12);
     }
 }
