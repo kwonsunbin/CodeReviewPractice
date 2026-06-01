@@ -1,5 +1,10 @@
 public class Calc {
 
+
+    int getSum(int a, int b) {
+        return a + b;
+    }
+
     public int getGop(int a, int b) {
         return a * b;
     }
