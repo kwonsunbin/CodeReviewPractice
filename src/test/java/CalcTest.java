@@ -1,12 +1,35 @@
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.BeforeEach;
 
 public class CalcTest {
 
+    private Calc calc;
+  
+
+
+    @BeforeEach
+    void setUp() {
+        calc = new Calc();
+    }
+  
     @Test
     void getSumTest() {
-        Calc calc = new Calc();
         int ret = calc.getSum(1, 2);
-        Assertions.assertEquals(3, ret);
+
+    @Test
+    void testGetGop() {
+        assertEquals(6, calc.getGop(2, 3));
+        assertEquals(0, calc.getGop(0, 5));
+        assertEquals(-10, calc.getGop(-2, 5));
+    }
+
+    @Test
+    void testGetZegop() {
+        assertEquals(9, calc.getZegop(3));
+        assertEquals(0, calc.getZegop(0));
+        assertEquals(25, calc.getZegop(-5));
     }
 }
