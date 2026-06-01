@@ -1,14 +1,14 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.BeforeEach;
 
 public class CalcTest {
 
     private Calc calc;
-
 
     @BeforeEach
     void setUp() {
@@ -46,7 +46,7 @@ public class CalcTest {
 
     @Test
     void getDevideWithException() {
-        assertThrows(IllegalArgumentException.class, () -> calc.getDevide(1, 0));
+        assertThrows(IllegalArgumentException.class, ()->calc.getDevide(1, 0));
     }
 
     @Test
