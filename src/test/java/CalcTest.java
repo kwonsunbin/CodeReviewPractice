@@ -1,5 +1,4 @@
-
-import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -10,17 +9,16 @@ import org.junit.jupiter.api.BeforeEach;
 public class CalcTest {
 
     private Calc calc;
-  
-
 
     @BeforeEach
     void setUp() {
         calc = new Calc();
     }
-  
+
     @Test
     void getSumTest() {
         int ret = calc.getSum(1, 2);
+    }
 
     @Test
     void testGetGop() {
@@ -49,7 +47,8 @@ public class CalcTest {
     @Test
     void getDevideWithException() {
         assertThrows(IllegalArgumentException.class, ()->calc.getDevide(1, 0));
-        
+    }
+
     @Test
     void 세_양수의_합() {
         assertThat(calc.getSumSum(1, 2, 3)).isEqualTo(6);
