@@ -2,8 +2,9 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.BeforeEach;
 
 public class CalcTest {
@@ -35,6 +36,20 @@ public class CalcTest {
         assertEquals(25, calc.getZegop(-5));
     }
 
+    @Test
+    void getMinus() {
+        assertEquals(10, calc.getMinus(12, 2));
+    }
+
+    @Test
+    void getDevide() {
+        assertEquals(2, calc.getDevide(10, 5));
+    }
+
+    @Test
+    void getDevideWithException() {
+        assertThrows(IllegalArgumentException.class, ()->calc.getDevide(1, 0));
+        
     @Test
     void 세_양수의_합() {
         assertThat(calc.getSumSum(1, 2, 3)).isEqualTo(6);
